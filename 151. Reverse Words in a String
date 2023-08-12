@@ -1,0 +1,40 @@
+class Solution {
+public:
+    string reverseWords(string s) {
+        
+        string ans="";
+        int n=s.size();
+        int i=0;
+
+        while(i<n){
+          
+            string temp="";
+            
+            // Jbtk space na aajye tbtk elements ko temp me daalte rho
+            while(s[i]!=' ' && i<n){
+                temp+=s[i];
+                i++;
+            }
+            
+            // Agr space aagya to pointer ko bs aage bdhao
+            while(s[i] == ' ' && i<n){
+                i++;
+            }
+            
+            // Agr temp ka size>0 hai toop me aao
+            if(temp.size()>0){
+                
+                // Agr ans ka size 0 hai to temp = ans
+                if(ans.size()==0){
+                    ans=temp;
+                }
+                
+                // Else agr ans ka size greater hai to temp+ ans
+                else{
+                    ans=temp+" "+ans;
+                }
+            }
+        }
+        return ans;
+    }
+};
