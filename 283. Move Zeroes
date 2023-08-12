@@ -1,0 +1,15 @@
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        
+        // i 0th index pr hai
+        int i=0;
+        for(int j=0;j<nums.size();j++)
+            
+            // Agr curr ele !=0 to usko i se swap krdo and i++
+            if(nums[j] != 0){
+                swap(nums[j], nums[i]);
+                i++;
+            }
+    }
+};
